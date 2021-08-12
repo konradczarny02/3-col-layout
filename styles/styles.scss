@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+$font-b: 'Big Shoulders Display';
+$font: 'Lexend Deca';
+$orange: hsl(31, 77%, 52%);
+$cyan: hsl(184, 100%, 22%);
+$dark-cyan: hsl(179, 100%, 13%);
+$transparent-white: hsla(0, 0%, 100%, 0.75);
+$light-gray: hsl(0, 0%, 95%);
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,5 +17,106 @@
 body {
   min-height: 100vh;
   min-width: 100vw;
+  font-size: 15px;
+  background: white;
+  font-family: $font;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $light-gray;
 }
 
+.container {
+  width: 360px;
+  height: 1600px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(3,1fr);
+    width: calc(360px * 3);
+    grid-template-rows: 1fr;
+    height: 530px;
+  }
+}
+
+.column {
+  &:nth-child(1) {
+    background-color: $orange;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  &:nth-child(2) {
+    background-color: $cyan;
+  }
+  &:nth-child(3) {
+    background-color: $dark-cyan;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  & > * {
+    margin-left: 10%;
+  }
+
+  &__img {
+    margin-top: 50px;
+  }
+
+  &__heading {
+    font-size: 3rem;
+    color: white;
+    font-family: $font-b;
+    font-weight: 700;
+    margin-top: 45px;
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    color: $transparent-white;
+    width: 250px;
+    margin-top: 40px;
+    font-weight: $font;
+  }
+
+  &__learn-more {
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+  }
+  
+  @media (min-width: 1440px) {
+    &:nth-child(1) {
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 10px;
+    }
+    &:nth-child(3) {
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
+
+.orange {
+  color: $orange;
+}
+
+.cyan {
+  color: $cyan;
+}
+
+.dark-cyan {
+  color: $dark-cyan;
+}

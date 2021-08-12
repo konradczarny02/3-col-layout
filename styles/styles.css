@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,6 +8,103 @@
 body {
   min-height: 100vh;
   min-width: 100vw;
+  font-size: 15px;
+  background: white;
+  font-family: "Lexend Deca";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f2f2f2;
+}
+
+.container {
+  width: 360px;
+  height: 1600px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
+@media (min-width: 1440px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    width: calc(360px * 3);
+    grid-template-rows: 1fr;
+    height: 530px;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.column:nth-child(1) {
+  background-color: #e38826;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.column:nth-child(2) {
+  background-color: #006970;
+}
+.column:nth-child(3) {
+  background-color: #004241;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.column > * {
+  margin-left: 10%;
+}
+.column__img {
+  margin-top: 50px;
+}
+.column__heading {
+  font-size: 3rem;
+  color: white;
+  font-family: "Big Shoulders Display";
+  font-weight: 700;
+  margin-top: 45px;
+  text-transform: uppercase;
+}
+.column__desc {
+  color: rgba(255, 255, 255, 0.75);
+  width: 250px;
+  margin-top: 40px;
+  font-weight: "Lexend Deca";
+}
+.column__learn-more {
+  width: 150px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+}
+@media (min-width: 1440px) {
+  .column:nth-child(1) {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+  }
+  .column:nth-child(3) {
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.orange {
+  color: #e38826;
+}
+
+.cyan {
+  color: #006970;
+}
+
+.dark-cyan {
+  color: #004241;
 }
 
 /*# sourceMappingURL=styles.css.map */
